@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeLab JS | Product Explorer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="products">
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="index.html"><span class="brand-mark">JS</span><span>CodeLab JavaScript</span></a>
+    <nav><ul class="nav-links"><li><a href="index.html">Task Manager</a></li><li><a class="active" href="products.html">Product Explorer</a></li><li><a href="registration.html">Registration</a></li></ul></nav>
+    <div class="header-actions"><button class="icon-btn theme-toggle" aria-label="Toggle theme">◐</button><button id="openCart" class="cart-pill"><span>Cart</span><span id="cartCount">0</span></button></div>
+  </div>
+</header>
+<main>
+  <section class="page-hero">
+    <div class="container hero-row"><div><span class="eyebrow">Array methods challenge</span><h1>Dynamic Product Explorer</h1><p>Render products from JavaScript data, then search, filter, sort, inspect, and add them to a live shopping cart.</p></div><div class="hero-badge"><small>Visible products</small><strong id="visibleCount">0 items</strong><span>Updates after every filter</span></div></div>
+  </section>
+  <section class="main-section">
+    <div class="container">
+      <div class="panel product-tools">
+        <input id="productSearch" class="control" placeholder="Search products...">
+        <select id="categoryFilter" class="control"><option value="all">All categories</option><option value="Development">Development</option><option value="Design">Design</option><option value="Productivity">Productivity</option></select>
+        <select id="sortProducts" class="control"><option value="default">Default order</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option><option value="name">Name A–Z</option></select>
+      </div>
+      <div id="productGrid" class="product-grid"></div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer"><div class="container footer-row"><p>JavaScript Practical Examination • Page 2 of 3</p><p>Data Rendering • Filter • Sort • Modal • Cart</p></div></footer>
+<div id="overlay" class="overlay"></div>
+<aside id="cartDrawer" class="cart-drawer" aria-label="Shopping cart">
+  <div class="drawer-head"><div><h2>Your Cart</h2><p class="helper">Quantity and total update instantly.</p></div><button id="closeCart" class="icon-btn">×</button></div>
+  <div id="cartItems" class="cart-items"></div>
+  <div class="drawer-foot"><div><small class="helper">Cart total</small><h2 id="cartTotal">$0</h2></div><button id="checkoutBtn" class="btn btn-primary">Checkout</button></div>
+</aside>
+<div id="productModal" class="modal"><div class="modal-head"><h2>Product details</h2><button id="closeModal" class="icon-btn">×</button></div><div id="modalBody" class="modal-body"></div></div>
+<div id="toast" class="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>

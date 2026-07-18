@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeLab JS | Task Manager</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="tasks">
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="index.html"><span class="brand-mark">JS</span><span>CodeLab JavaScript</span></a>
+    <nav><ul class="nav-links"><li><a class="active" href="index.html">Task Manager</a></li><li><a href="products.html">Product Explorer</a></li><li><a href="registration.html">Registration</a></li></ul></nav>
+    <div class="header-actions"><button class="icon-btn theme-toggle" aria-label="Toggle theme">◐</button></div>
+  </div>
+</header>
+<main>
+  <section class="page-hero">
+    <div class="container hero-row">
+      <div><span class="eyebrow">DOM manipulation challenge</span><h1>Interactive Task Manager</h1><p>Add, complete, search, filter, and delete tasks. All statistics must update immediately through JavaScript.</p></div>
+      <div class="hero-badge"><small>Today</small><strong id="todayLabel">Saturday</strong><span id="dateLabel">18 July 2026</span></div>
+    </div>
+  </section>
+  <section class="main-section">
+    <div class="container">
+      <div class="stats-grid">
+        <article class="panel stat-card"><span>Total tasks</span><strong id="totalCount">0</strong></article>
+        <article class="panel stat-card"><span>Completed</span><strong id="completedCount">0</strong></article>
+        <article class="panel stat-card"><span>Pending</span><strong id="pendingCount">0</strong></article>
+        <article class="panel stat-card"><span>Completion rate</span><strong id="completionRate">0%</strong></article>
+      </div>
+      <div class="task-layout">
+        <section class="panel">
+          <div class="panel-head"><div><h2>Create a new task</h2><p>Form submission must update the page without refreshing.</p></div></div>
+          <div class="panel-body">
+            <form id="taskForm" class="task-form">
+              <div class="field"><label for="taskTitle">Task title</label><input id="taskTitle" maxlength="60" placeholder="e.g. Complete JavaScript assignment" required></div>
+              <div class="inline-fields">
+                <div class="field"><label for="taskPriority">Priority</label><select id="taskPriority"><option value="high">High</option><option value="medium" selected>Medium</option><option value="low">Low</option></select></div>
+                <div class="field"><label for="taskCategory">Category</label><select id="taskCategory"><option>Study</option><option>Project</option><option>Personal</option><option>Meeting</option></select></div>
+              </div>
+              <button class="btn btn-primary" type="submit">＋ Add Task</button>
+            </form>
+          </div>
+        </section>
+        <section class="panel">
+          <div class="panel-head"><div><h2>Your tasks</h2><p>Use search and status filters to change the visible list.</p></div><button id="clearCompleted" class="btn btn-danger btn-small">Clear completed</button></div>
+          <div class="toolbar"><input id="taskSearch" class="control" placeholder="Search tasks..."><select id="statusFilter" class="control"><option value="all">All tasks</option><option value="pending">Pending</option><option value="completed">Completed</option></select></div>
+          <ul id="taskList" class="task-list"></ul>
+        </section>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer"><div class="container footer-row"><p>JavaScript Practical Examination • Page 1 of 3</p><p>Events • Arrays • DOM • Local Storage</p></div></footer>
+<div id="toast" class="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>

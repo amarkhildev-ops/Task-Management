@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeLab JS | Registration</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="registration">
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="index.html"><span class="brand-mark">JS</span><span>CodeLab JavaScript</span></a>
+    <nav><ul class="nav-links"><li><a href="index.html">Task Manager</a></li><li><a href="products.html">Product Explorer</a></li><li><a class="active" href="registration.html">Registration</a></li></ul></nav>
+    <div class="header-actions"><button class="icon-btn theme-toggle" aria-label="Toggle theme">◐</button></div>
+  </div>
+</header>
+<main>
+  <section class="page-hero"><div class="container hero-row"><div><span class="eyebrow">Validation challenge</span><h1>Smart Registration Form</h1><p>Validate input, calculate password strength, count characters, show or hide the password, and update the profile preview in real time.</p></div><div class="hero-badge"><small>Form status</small><strong id="formStatus">Incomplete</strong><span id="validFieldCount">0 of 5 fields valid</span></div></div></section>
+  <section class="main-section">
+    <div class="container form-layout">
+      <section class="panel"><div class="panel-head"><div><h2>Create student profile</h2><p>Errors should appear beside the related fields.</p></div></div><div class="panel-body">
+        <form id="registrationForm" class="registration-form" novalidate>
+          <div class="inline-fields">
+            <div class="field" data-field="fullName"><label for="fullName">Full name</label><input id="fullName" placeholder="Your full name"><small class="error-text"></small></div>
+            <div class="field" data-field="email"><label for="email">Email address</label><input id="email" type="email" placeholder="student@example.com"><small class="error-text"></small></div>
+          </div>
+          <div class="inline-fields">
+            <div class="field" data-field="password"><label for="password">Password</label><div class="password-wrap"><input id="password" type="password" placeholder="Minimum 8 characters"><button id="togglePassword" class="text-btn" type="button">Show</button></div><div class="strength"><span id="strengthBar"></span></div><small id="strengthText" class="helper">Password strength: none</small><small class="error-text"></small></div>
+            <div class="field" data-field="role"><label for="role">Primary role</label><select id="role"><option value="">Select a role</option><option>Frontend Developer</option><option>Backend Developer</option><option>UI/UX Designer</option><option>Project Manager</option></select><small class="error-text"></small></div>
+          </div>
+          <div class="field" data-field="bio"><label for="bio">Short biography</label><textarea id="bio" maxlength="120" placeholder="Write 20–120 characters about yourself..."></textarea><div class="bio-count"><span id="bioCount">0</span>/120</div><small class="error-text"></small></div>
+          <label class="helper"><input id="terms" type="checkbox"> I confirm that the entered information is correct.</label>
+          <button id="submitProfile" class="btn btn-primary" type="submit">Create Profile</button>
+        </form>
+      </div></section>
+      <aside class="panel profile-preview"><div class="preview-cover"></div><div class="preview-body"><div id="previewAvatar" class="preview-avatar">ST</div><h2 id="previewName">Student Name</h2><div id="previewRole" class="preview-role">Selected role</div><div id="previewEmail" class="preview-email">student@example.com</div><p id="previewBio" class="preview-bio">Your biography will appear here while you type.</p><div class="preview-tags"><span class="badge">Live Preview</span><span class="badge">JavaScript</span></div></div></aside>
+    </div>
+  </section>
+</main>
+<footer class="site-footer"><div class="container footer-row"><p>JavaScript Practical Examination • Page 3 of 3</p><p>Validation • Regular Expressions • Live Preview</p></div></footer>
+<div id="overlay" class="overlay"></div>
+<div id="successModal" class="modal"><div class="modal-body success-copy"><div class="success-icon">✓</div><h2>Profile created successfully</h2><p id="successMessage">The form passed all JavaScript validation rules.</p><button id="closeSuccess" class="btn btn-primary">Close</button></div></div>
+<div id="toast" class="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>
